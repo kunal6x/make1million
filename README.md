@@ -24,9 +24,9 @@ The server defaults to port 3000 on the loopback interface. `/` serves the offer
 
 ## Current launch status
 
-No public deployment, verified prospects, messages sent, customer orders, or payments exist. Search and business sites were blocked by the environment's network proxy during research. `sales/research-notes.md` records the exact observations; `sales/research-queue.csv` contains discovery queries, not qualified leads.
+The static preview is deployed at https://kunal6x.github.io/make1million/. GitHub [Pages deployment run](https://github.com/kunal6x/make1million/actions/runs/38849079702) completed successfully on October 16, 2026. Direct public-site checks are blocked by this workspace network policy; the exported project-subpath build passed local browser checks. Inquiries remain disabled. No verified prospects, messages sent, customer orders, or payments exist. Search and business sites were blocked by the environment's network proxy during research. `sales/research-notes.md` records the exact observations; `sales/research-queue.csv` contains discovery queries, not qualified leads.
 
-The next external prerequisites are permitted business research access, a public deployment, an actual seller/sending identity with explicit outreach authorization, and a seller-owned payment destination. No connected hosting or payment credentials were found. Do not put secret values in Git, documents, or chat. Use the provider's secure account settings. Do not invent seller identity or create accounts with false information.
+The next external prerequisites are permitted business research access, an actual seller/sending identity with explicit outreach authorization, and a seller-owned payment destination. GitHub publishing works through existing Git access; GitHub API administration and payment access remain unavailable. Do not put secret values in Git, documents, or chat. Use the provider's secure account settings. Do not invent seller identity or create accounts with false information.
 
 ## Enable an actual inquiry channel
 
@@ -40,7 +40,7 @@ node --env-file=.env server.mjs
 
 The form saves requests in `data/inquiries.jsonl` (ignored by Git). It sends **no email notification**. An operator must check this private file and respond through the actual sending account. Do not publish the data directory. Use a persistent disk, restrict operator access, and honor deletion requests if deploying. File-based storage and in-memory submission limits suit a small single-instance pilot; a multi-instance service needs shared storage and shared abuse controls.
 
-For a Node host, use `npm start`, bind `HOST=0.0.0.0`, accept its assigned `PORT`, and mount durable storage at `DATA_DIR`. No hosting provider has been configured or charged. The provider must terminate HTTPS. The app limits submissions by the socket address and deliberately does not trust forwarded headers: behind a reverse proxy, all visitors may share the ten-submissions-per-hour limit. Configure client-aware limits at the trusted proxy before opening public intake; do not blindly trust arbitrary `X-Forwarded-For` headers. Do not enable intake on an ephemeral deployment that loses requests. Serve through Node: a static host alone cannot execute `/api/config` or `/api/inquiries`.
+For a Node host, use `npm start`, bind `HOST=0.0.0.0`, accept its assigned `PORT`, and mount durable storage at `DATA_DIR`. No Node backend host has been configured or charged. The provider must terminate HTTPS. The app limits submissions by the socket address and deliberately does not trust forwarded headers: behind a reverse proxy, all visitors may share the ten-submissions-per-hour limit. Configure client-aware limits at the trusted proxy before opening public intake; do not blindly trust arbitrary `X-Forwarded-For` headers. Do not enable intake on an ephemeral deployment that loses requests. Serve through Node: a static host alone cannot execute `/api/config` or `/api/inquiries`.
 
 ## Static preview deployment
 
