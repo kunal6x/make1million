@@ -1,0 +1,1 @@
+transaction_id,prospect_id,invoice_id,currency,service_amount_usd,tax_collected_usd,provider_fee_usd,refund_amount_usd,chargeback_amount_usd,direct_cost_usd,net_cash_usd,payment_confirmed_at,payout_settled_at,settlement_evidence_reference,delivery_accepted_at,status,notes
